@@ -1,10 +1,63 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Mini Web Của Con</title>
+    <title>Mini YouTube Của Con</title>
+
+    <style>
+        body {
+            margin: 0;
+            background-color: #0f0f0f;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Thanh header */
+        .header {
+            background-color: #202020;
+            padding: 15px;
+            font-size: 20px;
+            font-weight: bold;
+            color: #ff0000;
+            text-align: center;
+            box-shadow: 0 2px 5px black;
+        }
+
+        /* Khu vực video */
+        .video-section {
+            display: flex;
+            justify-content: center;
+            margin-top: 40px;
+        }
+
+        iframe {
+            border: 6px solid red;
+            border-radius: 15px;
+            box-shadow: 0 0 25px red;
+        }
+
+        /* Phần mô tả */
+        .description {
+            text-align: center;
+            margin-top: 20px;
+            color: #aaaaaa;
+        }
+
+    </style>
 </head>
+
 <body>
-    <h1>Xin chào thế giới 😄</h1>
-    <p>Đây là web đầu tiên con tự host!</p>
+
+    <div class="header">
+        🔴 Mini YouTube của Con
+    </div>
+
+    <div class="video-section">
+        <iframe width="1840" height="1035" src="https://www.youtube.com/embed/Px2NDL-frNs" title="Truyền Hình Trực Tiếp Bắn Pháo Hoa Chúc Mừng Năm Mới 2026 Việt Nam | Đêm 29 Tết Xuân Bính Ngọ – Chúc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+
+    <div class="description">
+        Đây là video thử nghiệm đầu tiên của con 😎🔥
+    </div>
+
 </body>
 </html>
