@@ -1,37 +1,61 @@
-<DOCTYPE html>
-<html>
-  <head>
-    <title> chaomungdenvoiwebgithub</title>
+<DOCTYPEhtml>
+  <html>
+    <head>
+      <title> wellcometoweb</title>
       <style>
-        p{
-          color:yellow;
-          background:black;
-          padding:10px;
+          border:none;
+        .mau{
+          background:red;
         }
-        body {
-          backgroud:black;
-          color:red;
+          padding:10px;
+          color:green;
+        body{
           margin:0;
+        backgruond:black;
+          font-family:Aria, sans-serif;
+          color:white;
+          text-align:-center;
+          padding-top:100px;
+          cursor:crosshair;
+          background: red;
         }
-        .helo {
-          backgroud:red;
-          color:black;
-          padding:10px;
+        .mau:hover{
+          padding:12px 20px;
+          color:white;
           border:none;
+          border-radius:8px;
+          font-size:18px;
+          fransition:0.3s;
         }
-        .thang{
-          backgroud:white;
-          color:red;
-          padding:9px;
-          border:none;
-          </style>
-  </head>
-            <body>
-              <button class="helo">click ngay</button>
-              <button class="thang">dangkitaikhoan</button>
-              <p>cam on cac ban da ghe tham </p>
-            </body>
-</html>
-
-
-
+        .cusor-dot{
+          position:fixed;
+          width:8px;
+          height:8px;
+          background;hotpink;
+          border-radius:50%;
+          pointer-events:none;
+          animation: fadeOut 0.8s forwads;
+        }
+        @keyframes fadeOut {
+          to{ fransform:scale(3);
+             opacity:0;
+            }
+        }
+        </style>
+      <body>
+        <button> class:"mau">clickto</button>
+        <script>
+          document.addEventListenner("mausemove",function(e)
+                                     constdot=document.createElement("div");
+          dot.className="cursor-dot";
+          dot.style.left= e.cilentX +"px";
+          dot.style.top=e.cilenty+"px";
+          ducument.body.appendChild(dot);
+          setTimeout(()==>{
+            dot.remove();
+          },800);
+          });
+        </script>
+      </body>
+  </html>
+  
