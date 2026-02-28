@@ -1,64 +1,76 @@
 <!DOCTYPE html>
-  <html>
-    <head>
-      <title> wellcometoweb</title>
-      <style>
-        .mau{
-          border:none;
-          background:red;
-          padding:10px;
-          color:green;}
-        body{
-          margin:0;
-        background:black;
-          font-family:Arial, sans-serif;
-          color:white;
-          text-align: center;
-          padding-top:100px;
-          cursor:crosshair;
+<html>
+<head>
+    <title>Welcome to Web</title>
+    <style>
+        .mau {
+            border: none;
+            background: red;
+            padding: 10px;
+            color: green;
+            cursor: pointer;
         }
-        .mau:hover{
-          padding:12px 20px;
-          color:white;
-          border:none;
-          border-radius:8px;
-          font-size:18px;
-          transition:0.3s;
+        body {
+            margin: 0;
+            background: black;
+            font-family: Arial, sans-serif;
+            color: white;
+            text-align: center;
+            padding-top: 100px;
+            cursor: crosshair;
+            overflow: hidden;
+            height: 100vh;
         }
-        .cursor-dot{
-          position:fixed;
-          width:8px;
-          height:8px;
-          background:hotpink;
-          border-radius:50%;
-          pointer-events:none;
-          animation: fadeOut 0.8s forwards;
+        .mau:hover {
+            padding: 12px 20px;
+            color: white;
+            border-radius: 8px;
+            font-size: 18px;
+            transition: 0.3s;
+        }
+        .cursor-dot {
+            position: fixed;
+            width: 8px;
+            height: 8px;
+            background: hotpink;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 999;
+          
+            transform: translate(-50%, -50%);
+            animation: fadeOut 0.8s forwards;
         }
         @keyframes fadeOut {
-          to{ transform:scale(3);
-             opacity:0;
+            to {
+                transform: translate(-50%, -50%) scale(3);
+                opacity: 0;
             }
         }
-        </style>
-    </head>
-      <body>
-        <button class="mau">clickto</button>
-        <script>
-          document.addEventListener("mousemove",function(e) {
-                                     const dot=document.createElement("div");
-          dot.className="cursor-dot";
-          dot.style.left= e.clientX +"px";
-          dot.style.top=e.clientY +"px";
-          document.body.appendChild(dot);
-          setTimeout(()=>{
-            dot.remove();
-          },800);
-          });
-        </script>
-      </body>
-  </html>
-  
+    </style>
+</head>
+<body>
+    <button class="mau">CLICK TO</button>
 
-
-
-
+    <script>
+        function createDot(x, y) {
+            const dot = document.createElement("div");
+            dot.className = "cursor-dot";
+            dot.style.left = x + "px";
+            dot.style.top = y + "px";
+            document.body.appendChild(dot);
+            
+            setTimeout(() => {
+                dot.remove();
+            }, 800);
+        }
+        document.addEventListener("mousemove", function(e) {
+            createDot(e.clientX, e.clientY);
+        });
+      
+        document.addEventListener("touchmove", function(e) {
+            const touch = e.touches[0];
+            createDot(touch.clientX, touch.clientY);
+        }, { passive: true });
+    </script>
+</body>
+</html>
